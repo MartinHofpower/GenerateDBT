@@ -371,9 +371,13 @@ select * from final
     def _generate_join_clauses(self, dependencies: List[str]) -> str:
         """Generate JOIN clauses for complex models."""
         clauses = []
+        # Get the first dependency's column name for join
+        first_dep_col = f"{dependencies[0] if dependencies else 'stg_source_1'}_id"
+        
         for i, dep in enumerate(dependencies):
             source_alias = f"source_{i + 2}"
-            clauses.append(f"    left join {source_alias} on source_1.{dependencies[0]}_id = {source_alias}.{dep}_id")
+            dep_col = f"{dep}_id"
+            clauses.append(f"    left join {source_alias} on source_1.{first_dep_col} = {source_alias}.{dep_col}")
         return "\n" + "\n".join(clauses)
     
     def _generate_mart_model(self, model_name: str) -> str:
@@ -492,8 +496,19 @@ select * from final
                 lines.extend([
                     f"  - name: {model_name}",
                     f"    description: {model_type.capitalize()} model {model_name}",
-                    "    columns:",
-                    f"      - name: {model_name}_id",
+                    "    columns:"
+                ])
+                
+                # Determine appropriate column name based on model type and complexity
+                if model_type == "staging" and self.config.complexity == ComplexityLevel.SIMPLE:
+                    # Simple staging models use original column names
+                    primary_col = "id"
+                else:
+                    # Medium and complex models use prefixed column names
+                    primary_col = f"{model_name}_id"
+                
+                lines.extend([
+                    f"      - name: {primary_col}",
                     "        description: Primary identifier",
                     f"        tests:",
                     f"          - unique",
