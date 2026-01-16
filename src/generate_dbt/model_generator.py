@@ -340,6 +340,9 @@ select * from aggregated
             alias = f"source_{i + 1}"
             ctes.append(f"{alias} as (\n    select * from {{{{ ref('{dep}') }}}}\n)")
         
+        # Pass the first dependency to join clauses
+        join_clause = self._generate_join_clauses(dependencies[0], dependencies[1:]) if len(dependencies) > 1 else ''
+        
         return f"""{{{{
     config(
         materialized='table',
@@ -355,7 +358,7 @@ joined as (
         source_1.*,
         row_number() over (partition by source_1.{dependencies[0]}_id order by source_1.{dependencies[0]}_created_at desc) as row_num
     from source_1
-    {self._generate_join_clauses(dependencies[1:]) if len(dependencies) > 1 else ''}
+    {join_clause}
 ),
 
 final as (
@@ -368,16 +371,35 @@ final as (
 select * from final
 """
     
-    def _generate_join_clauses(self, dependencies: List[str]) -> str:
-        """Generate JOIN clauses for complex models."""
-        clauses = []
-        # Get the first dependency's column name for join
-        first_dep_col = f"{dependencies[0] if dependencies else 'stg_source_1'}_id"
+    def _generate_join_clauses(self, first_dep: str, other_deps: List[str]) -> str:
+        """Generate JOIN clauses for complex models.
         
-        for i, dep in enumerate(dependencies):
+        Args:
+            first_dep: The first dependency (used in source_1)
+            other_deps: Other dependencies to join
+        """
+        clauses = []
+        first_dep_col = f"{first_dep}_id"
+        
+        for i, dep in enumerate(other_deps):
             source_alias = f"source_{i + 2}"
             dep_col = f"{dep}_id"
             clauses.append(f"    left join {source_alias} on source_1.{first_dep_col} = {source_alias}.{dep_col}")
+        return "\n" + "\n".join(clauses)
+    
+    def _generate_mart_join_clauses(self, dependencies: List[str]) -> str:
+        """Generate JOIN clauses for mart models (uses dep_X aliases).
+        
+        Args:
+            dependencies: List of all dependencies
+        """
+        clauses = []
+        first_dep_col = f"{dependencies[0]}_id"
+        
+        for i, dep in enumerate(dependencies[1:]):
+            dep_alias = f"dep_{i + 2}"
+            dep_col = f"{dep}_id"
+            clauses.append(f"    left join {dep_alias} on dep_1.{first_dep_col} = {dep_alias}.{dep_col}")
         return "\n" + "\n".join(clauses)
     
     def _generate_mart_model(self, model_name: str) -> str:
@@ -449,6 +471,9 @@ select * from final
             alias = f"dep_{i + 1}"
             ctes.append(f"{alias} as (\n    select * from {{{{ ref('{dep}') }}}}\n)")
         
+        # Generate join clauses with proper column references
+        join_clause = self._generate_mart_join_clauses(dependencies) if len(dependencies) > 1 else ''
+        
         return f"""{{{{
     config(
         materialized='incremental',
@@ -467,7 +492,7 @@ combined as (
         current_timestamp() as inserted_at,
         current_timestamp() as updated_at
     from dep_1
-    {self._generate_join_clauses(dependencies[1:]) if len(dependencies) > 1 else ''}
+    {join_clause}
 ),
 
 final as (
