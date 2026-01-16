@@ -210,3 +210,4 @@ __marimo__/
 generated_dbt_project/
 test_project/
 *_dbt_project/
+examples/example_*/
