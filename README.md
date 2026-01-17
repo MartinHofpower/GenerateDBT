@@ -2,6 +2,8 @@
 
 A Python tool for generating dbt (data build tool) projects with configurable scale and complexity for testing purposes.
 
+Disclaimer: This is a community-driven project initially set up with the help of GitHub Copilot and is not officially affiliated with dbt Labs. The tool is designed to help users create dbt projects for testing and learning purposes. The project is tested mainly with dbt-fabric but should work with other dbt adapters as well.
+
 ## Overview
 
 GenerateDBT creates complete dbt projects with models, macros, and seed data that can be used to test dbt functionality across different data platforms (Snowflake, BigQuery, Postgres, Microsoft Fabric, Databricks, etc.). The generated code is platform-agnostic and follows dbt best practices.
@@ -18,18 +20,17 @@ GenerateDBT creates complete dbt projects with models, macros, and seed data tha
 
 ## Installation
 
-### From Source
+### Clone Repo
 
 ```bash
 git clone https://github.com/MartinHofpower/GenerateDBT.git
-cd GenerateDBT
-pip install -e .
 ```
 
-### Using pip (future)
+### From Source
 
 ```bash
-pip install generate-dbt
+cd GenerateDBT
+pip install -e .
 ```
 
 ## Quick Start
