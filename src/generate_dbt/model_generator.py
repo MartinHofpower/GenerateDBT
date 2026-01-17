@@ -217,7 +217,7 @@ renamed as (
         id as {model_name}_id,
         value as {model_name}_value,
         created_at as {model_name}_created_at,
-        current_timestamp() as loaded_at
+        {{{{ dbt.current_timestamp() }}}} as loaded_at
     from source
 )
 
@@ -258,7 +258,7 @@ renamed as (
         value as {model_name}_value,
         created_at as {model_name}_created_at,
         data_quality_flag,
-        current_timestamp() as loaded_at,
+        {{{{ dbt.current_timestamp() }}}} as loaded_at,
         '{{{{ run_started_at }}}}' as run_started_at
     from cleaned
     where data_quality_flag = 'valid'
@@ -323,7 +323,7 @@ aggregated as (
     select
         count(*) as total_records,
         count(distinct {main_table}.{dependencies[0]}_id) as unique_ids,
-        current_timestamp() as aggregated_at
+        {{{{ dbt.current_timestamp() }}}} as aggregated_at
     from {main_table}
 )
 
@@ -489,8 +489,8 @@ combined as (
     select
         {{{{ dbt_utils.generate_surrogate_key(['dep_1.{dependencies[0]}_id']) }}}} as surrogate_id,
         dep_1.*,
-        current_timestamp() as inserted_at,
-        current_timestamp() as updated_at
+        {{{{ dbt.current_timestamp() }}}} as inserted_at,
+        {{{{ dbt.current_timestamp() }}}} as updated_at
     from dep_1
     {join_clause}
 ),
