@@ -142,9 +142,18 @@ def main(num_models, num_macros, complexity, output_dir, project_name,
         click.echo(f"  1. cd {output_dir}")
         click.echo("  2. Configure your profiles.yml with database connection details")
         click.echo("  3. Run: dbt debug (to test connection)")
-        click.echo("  4. Run: dbt seed (to load seed data)")
-        click.echo("  5. Run: dbt run (to build models)")
-        click.echo("  6. Run: dbt test (to run tests)")
+        
+        # Add dbt deps step for complex projects
+        if config.complexity == ComplexityLevel.COMPLEX:
+            click.echo("  4. Run: dbt deps (to install dependencies)")
+            click.echo("  5. Run: dbt seed (to load seed data)")
+            click.echo("  6. Run: dbt run (to build models)")
+            click.echo("  7. Run: dbt test (to run tests)")
+        else:
+            click.echo("  4. Run: dbt seed (to load seed data)")
+            click.echo("  5. Run: dbt run (to build models)")
+            click.echo("  6. Run: dbt test (to run tests)")
+        
         click.echo()
         click.echo("📖 For more information, see the README.md in the generated project")
         

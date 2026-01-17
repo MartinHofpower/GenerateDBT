@@ -34,6 +34,11 @@ class ProjectGenerator:
         project_yml_path = self._generate_project_yml(output_path)
         results["files_generated"].append(project_yml_path)
         
+        # Generate packages.yml if needed (for complex projects using dbt_utils)
+        packages_yml_path = self._generate_packages_yml(output_path)
+        if packages_yml_path:
+            results["files_generated"].append(packages_yml_path)
+        
         # Generate models
         model_files = self.model_gen.generate_models(output_path)
         results["files_generated"].extend(model_files)
@@ -98,6 +103,31 @@ class ProjectGenerator:
         file_path = output_dir / "dbt_project.yml"
         with open(file_path, "w") as f:
             yaml.dump(project_config, f, default_flow_style=False, sort_keys=False)
+        
+        return str(file_path)
+    
+    def _generate_packages_yml(self, output_dir: Path) -> str:
+        """Generate packages.yml file for dbt dependencies.
+        
+        Only generates if complexity is COMPLEX (uses dbt_utils).
+        """
+        from .config import ComplexityLevel
+        
+        if self.config.complexity != ComplexityLevel.COMPLEX:
+            return None
+        
+        packages_config = {
+            "packages": [
+                {
+                    "package": "dbt-labs/dbt_utils",
+                    "version": "1.1.1"
+                }
+            ]
+        }
+        
+        file_path = output_dir / "packages.yml"
+        with open(file_path, "w") as f:
+            yaml.dump(packages_config, f, default_flow_style=False, sort_keys=False)
         
         return str(file_path)
     
@@ -217,8 +247,20 @@ This is a generated dbt project for testing purposes. It contains sample models,
    ```
 
 ### Usage
+"""
+        
+        # Add dbt deps step for complex projects
+        from .config import ComplexityLevel
+        if self.config.complexity == ComplexityLevel.COMPLEX:
+            readme_content += """
+Install dbt packages (required for complex projects):
+```bash
+dbt deps
+```
 
-Load seed data:
+"""
+        
+        readme_content += """Load seed data:
 ```bash
 dbt seed
 ```
