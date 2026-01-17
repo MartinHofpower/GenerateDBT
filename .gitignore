@@ -211,3 +211,4 @@ generated_dbt_project/
 test_project/
 *_dbt_project/
 examples/example_*/
+profiles.yml
