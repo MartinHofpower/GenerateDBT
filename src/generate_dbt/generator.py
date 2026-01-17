@@ -298,7 +298,7 @@ Simply install the appropriate dbt adapter and configure your `profiles.yml` acc
 """
         
         file_path = output_dir / "README.md"
-        with open(file_path, "w") as f:
+        with open(file_path, "w", encoding="utf-8") as f:
             f.write(readme_content)
         
         return str(file_path)
