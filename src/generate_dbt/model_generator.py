@@ -284,6 +284,8 @@ select * from renamed
             ref_table = "stg_source_1"
         else:
             ref_table = dependencies[0]
+        
+        source_id_col = f"{ref_table}_id"
             
         return f"""{{{{
     config(
@@ -293,6 +295,7 @@ select * from renamed
 
 -- Simple intermediate transformation
 select
+    {source_id_col} as {model_name}_id,
     *,
     1 as record_count
 from {{{{ ref('{ref_table}') }}}}
@@ -308,6 +311,7 @@ from {{{{ ref('{ref_table}') }}}}
             ctes.append(f"{dep.replace('stg_', '').replace('int_', '')} as (\n    select * from {{{{ ref('{dep}') }}}}\n)")
         
         main_table = dependencies[0].replace('stg_', '').replace('int_', '')
+        source_id_col = f"{dependencies[0]}_id"
         
         return f"""{{{{
     config(
@@ -316,18 +320,18 @@ from {{{{ ref('{ref_table}') }}}}
     )
 }}}}
 
--- Medium complexity intermediate model with aggregations
+-- Medium complexity intermediate model with transformations
 with {',\n\n'.join(ctes)},
 
-aggregated as (
+transformed as (
     select
-        count(*) as total_records,
-        count(distinct {main_table}.{dependencies[0]}_id) as unique_ids,
-        {{{{ dbt.current_timestamp() }}}} as aggregated_at
+        {main_table}.{source_id_col} as {model_name}_id,
+        {main_table}.*,
+        {{{{ dbt.current_timestamp() }}}} as transformed_at
     from {main_table}
 )
 
-select * from aggregated
+select * from transformed
 """
     
     def _generate_complex_intermediate(self, model_name: str, dependencies: List[str]) -> str:
@@ -355,6 +359,7 @@ with {',\n\n'.join(ctes)},
 
 joined as (
     select
+        source_1.{dependencies[0]}_id as {model_name}_id,
         source_1.*,
         row_number() over (partition by source_1.{dependencies[0]}_id order by source_1.{dependencies[0]}_created_at desc) as row_num
     from source_1
@@ -419,6 +424,9 @@ select * from final
             ref_table = "stg_source_1"
         else:
             ref_table = dependencies[0]
+        
+        # Determine the source ID column name
+        source_id_col = f"{ref_table}_id"
             
         return f"""{{{{
     config(
@@ -427,7 +435,10 @@ select * from final
 }}}}
 
 -- Simple mart model
-select * from {{{{ ref('{ref_table}') }}}}
+select
+    {source_id_col} as {model_name}_id,
+    *
+from {{{{ ref('{ref_table}') }}}}
 """
     
     def _generate_medium_mart(self, model_name: str, dependencies: List[str]) -> str:
@@ -436,6 +447,7 @@ select * from {{{{ ref('{ref_table}') }}}}
             dependencies = ["int_transformed_1"]
         
         is_fact = "fct_" in model_name
+        source_id_col = f"{dependencies[0]}_id"
         
         return f"""{{{{
     config(
@@ -451,7 +463,8 @@ with base as (
 
 final as (
     select
-        *,
+        {source_id_col} as {model_name}_id,
+        base.*,
         '{'fact' if is_fact else 'dimension'}' as model_type
     from base
 )
@@ -488,6 +501,7 @@ with {',\n\n'.join(ctes)},
 combined as (
     select
         {{{{ dbt_utils.generate_surrogate_key(['dep_1.{dependencies[0]}_id']) }}}} as surrogate_id,
+        dep_1.{dependencies[0]}_id as {model_name}_id,
         dep_1.*,
         {{{{ dbt.current_timestamp() }}}} as inserted_at,
         {{{{ dbt.current_timestamp() }}}} as updated_at
