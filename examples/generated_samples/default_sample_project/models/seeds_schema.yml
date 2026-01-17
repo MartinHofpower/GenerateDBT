@@ -1,0 +1,35 @@
+# This file documents the expected seed files
+# Seed files should be created as CSV files in the seeds/ directory
+
+version: 2
+
+seeds:
+  - name: raw_data_1
+    description: Raw data source 1 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_2
+    description: Raw data source 2 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_3
+    description: Raw data source 3 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp

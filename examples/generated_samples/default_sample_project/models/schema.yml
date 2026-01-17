@@ -1,0 +1,92 @@
+version: 2
+
+models:
+  - name: stg_source_1
+    description: Staging model stg_source_1
+    columns:
+      - name: stg_source_1_id
+        description: Primary identifier
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_source_2
+    description: Staging model stg_source_2
+    columns:
+      - name: stg_source_2_id
+        description: Primary identifier
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_source_3
+    description: Staging model stg_source_3
+    columns:
+      - name: stg_source_3_id
+        description: Primary identifier
+        tests:
+          - unique
+          - not_null
+
+  - name: int_transformed_1
+    description: Intermediate model int_transformed_1
+    columns:
+      - name: int_transformed_1_id
+        description: Primary identifier
+        tests:
+          - unique
+          - not_null
+
+  - name: int_transformed_2
+    description: Intermediate model int_transformed_2
+    columns:
+      - name: int_transformed_2_id
+        description: Primary identifier
+        tests:
+          - unique
+          - not_null
+
+  - name: int_transformed_3
+    description: Intermediate model int_transformed_3
+    columns:
+      - name: int_transformed_3_id
+        description: Primary identifier
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_business_event_1
+    description: Marts model fct_business_event_1
+    columns:
+      - name: fct_business_event_1_id
+        description: Primary identifier
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_entity_2
+    description: Marts model dim_entity_2
+    columns:
+      - name: dim_entity_2_id
+        description: Primary identifier
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_business_event_3
+    description: Marts model fct_business_event_3
+    columns:
+      - name: fct_business_event_3_id
+        description: Primary identifier
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_entity_4
+    description: Marts model dim_entity_4
+    columns:
+      - name: dim_entity_4_id
+        description: Primary identifier
+        tests:
+          - unique
+          - not_null

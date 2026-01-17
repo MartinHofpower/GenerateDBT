@@ -1,0 +1,1005 @@
+# This file documents the expected seed files
+# Seed files should be created as CSV files in the seeds/ directory
+
+version: 2
+
+seeds:
+  - name: raw_data_1
+    description: Raw data source 1 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_2
+    description: Raw data source 2 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_3
+    description: Raw data source 3 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_4
+    description: Raw data source 4 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_5
+    description: Raw data source 5 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_6
+    description: Raw data source 6 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_7
+    description: Raw data source 7 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_8
+    description: Raw data source 8 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_9
+    description: Raw data source 9 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_10
+    description: Raw data source 10 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_11
+    description: Raw data source 11 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_12
+    description: Raw data source 12 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_13
+    description: Raw data source 13 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_14
+    description: Raw data source 14 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_15
+    description: Raw data source 15 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_16
+    description: Raw data source 16 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_17
+    description: Raw data source 17 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_18
+    description: Raw data source 18 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_19
+    description: Raw data source 19 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_20
+    description: Raw data source 20 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_21
+    description: Raw data source 21 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_22
+    description: Raw data source 22 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_23
+    description: Raw data source 23 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_24
+    description: Raw data source 24 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_25
+    description: Raw data source 25 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_26
+    description: Raw data source 26 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_27
+    description: Raw data source 27 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_28
+    description: Raw data source 28 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_29
+    description: Raw data source 29 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_30
+    description: Raw data source 30 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_31
+    description: Raw data source 31 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_32
+    description: Raw data source 32 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_33
+    description: Raw data source 33 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_34
+    description: Raw data source 34 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_35
+    description: Raw data source 35 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_36
+    description: Raw data source 36 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_37
+    description: Raw data source 37 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_38
+    description: Raw data source 38 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_39
+    description: Raw data source 39 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_40
+    description: Raw data source 40 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_41
+    description: Raw data source 41 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_42
+    description: Raw data source 42 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_43
+    description: Raw data source 43 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_44
+    description: Raw data source 44 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_45
+    description: Raw data source 45 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_46
+    description: Raw data source 46 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_47
+    description: Raw data source 47 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_48
+    description: Raw data source 48 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_49
+    description: Raw data source 49 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_50
+    description: Raw data source 50 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_51
+    description: Raw data source 51 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_52
+    description: Raw data source 52 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_53
+    description: Raw data source 53 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_54
+    description: Raw data source 54 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_55
+    description: Raw data source 55 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_56
+    description: Raw data source 56 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_57
+    description: Raw data source 57 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_58
+    description: Raw data source 58 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_59
+    description: Raw data source 59 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_60
+    description: Raw data source 60 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_61
+    description: Raw data source 61 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_62
+    description: Raw data source 62 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_63
+    description: Raw data source 63 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_64
+    description: Raw data source 64 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_65
+    description: Raw data source 65 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_66
+    description: Raw data source 66 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_67
+    description: Raw data source 67 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_68
+    description: Raw data source 68 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_69
+    description: Raw data source 69 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_70
+    description: Raw data source 70 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_71
+    description: Raw data source 71 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_72
+    description: Raw data source 72 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_73
+    description: Raw data source 73 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_74
+    description: Raw data source 74 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_75
+    description: Raw data source 75 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_76
+    description: Raw data source 76 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_77
+    description: Raw data source 77 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_78
+    description: Raw data source 78 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_79
+    description: Raw data source 79 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_80
+    description: Raw data source 80 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_81
+    description: Raw data source 81 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_82
+    description: Raw data source 82 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_83
+    description: Raw data source 83 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_84
+    description: Raw data source 84 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_85
+    description: Raw data source 85 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_86
+    description: Raw data source 86 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_87
+    description: Raw data source 87 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_88
+    description: Raw data source 88 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_89
+    description: Raw data source 89 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_90
+    description: Raw data source 90 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_91
+    description: Raw data source 91 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_92
+    description: Raw data source 92 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_93
+    description: Raw data source 93 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_94
+    description: Raw data source 94 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_95
+    description: Raw data source 95 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_96
+    description: Raw data source 96 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_97
+    description: Raw data source 97 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_98
+    description: Raw data source 98 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_99
+    description: Raw data source 99 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp
+
+  - name: raw_data_100
+    description: Raw data source 100 for testing
+    columns:
+      - name: id
+        description: Primary key
+      - name: value
+        description: Sample value
+      - name: created_at
+        description: Timestamp

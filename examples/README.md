@@ -30,3 +30,15 @@ The example scripts will create several directories with generated dbt projects:
 - `example_custom/`
 
 Each generated project includes a README.md with instructions on how to use it.
+
+# Pregenerated Projects
+
+For better understanding without running the generator, you can explore the following pregenerated sample projects:
+- [complex_sample_project](./generated_samples/complex_sample_project/): A complex dbt project with multiple models, macros, and seed data. Created by running:
+  ```bash
+  generate-dbt --num-macros 200 --num-models 500 --complexity complex --output-dir complex_sample_project --project-name complex_sample_project --num-seeds 100 --max-dependencies 50 
+  ```
+- [default_dbt_project](./generated_samples/default_sample_project/): A basic dbt project with the generator's default settings. Created by running:
+  ```bash
+  generate-dbt --output-dir default_sample_project --project-name default_sample_projec
+  ```
