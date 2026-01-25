@@ -500,7 +500,7 @@ with {',\n\n'.join(ctes)},
 
 combined as (
     select
-        {{{{ dbt_utils.generate_surrogate_key(['dep_1.{dependencies[0]}_id']) }}}} as surrogate_id,
+        {{{{ dbt.concat(['dep_1.{dependencies[0]}_id']) }}}} as surrogate_id,
         dep_1.{dependencies[0]}_id as {model_name}_id,
         dep_1.*,
         {{{{ dbt.current_timestamp() }}}} as inserted_at,
