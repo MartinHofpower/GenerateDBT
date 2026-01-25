@@ -40,5 +40,5 @@ For better understanding without running the generator, you can explore the foll
   ```
 - [default_dbt_project](./generated_samples/default_sample_project/): A basic dbt project with the generator's default settings. Created by running:
   ```bash
-  generate-dbt --output-dir default_sample_project --project-name default_sample_projec
+  generate-dbt --output-dir default_sample_project --project-name default_sample_project
   ```
