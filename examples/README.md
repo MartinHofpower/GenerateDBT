@@ -42,3 +42,5 @@ For better understanding without running the generator, you can explore the foll
   ```bash
   generate-dbt --output-dir default_sample_project --project-name default_sample_project
   ```
+
+Note: The pregenerated projects will likely differ from newly generated ones due to non-deterministic elements in the generation process.
