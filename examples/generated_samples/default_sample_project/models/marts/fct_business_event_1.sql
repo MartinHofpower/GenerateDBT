@@ -7,12 +7,12 @@
 
 -- Fact table for business analysis
 with base as (
-    select * from {{ ref('int_transformed_3') }}
+    select * from {{ ref('stg_source_3') }}
 ),
 
 final as (
     select
-        int_transformed_3_id as fct_business_event_1_id,
+        stg_source_3_id as fct_business_event_1_id,
         base.*,
         'fact' as model_type
     from base

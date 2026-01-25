@@ -57,11 +57,6 @@ complex_sample_project/
 
 ### Usage
 
-Install dbt packages (required for complex projects):
-```bash
-dbt deps
-```
-
 Load seed data:
 ```bash
 dbt seed

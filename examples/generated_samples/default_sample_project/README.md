@@ -56,6 +56,7 @@ default_sample_project/
    ```
 
 ### Usage
+
 Load seed data:
 ```bash
 dbt seed
